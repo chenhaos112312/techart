@@ -1,10 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
 import { siteConfig } from '@/lib/config'
 import CONFIG from '../config'
+import { useGlobal } from '@/lib/global'
+import dynamic from 'next/dynamic'
+import { useRouter } from 'next/router'
+import { useRef } from 'react'
+const AlgoliaSearchModal = dynamic(() => import('@/themes/starter/components/AlgoliaSearchModal'), { ssr: false })
 /**
  * 英雄大图区块
  */
-export const Hero = () => {
+export const Hero = (props) => {
+  console.log(props,"-------props-----------")
+  const router = useRouter()
+  const searchModal = useRef(null)
+
+  function handleSearch() {
+    if (siteConfig('ALGOLIA_APP_ID')) {
+      searchModal.current.openSearch()
+    } else {
+      router.push('/search')
+    }
+  }
   return <>
      {/* <!-- ====== Hero Section Start --> */}
      <div
@@ -36,11 +52,13 @@ export const Hero = () => {
               >
                 {siteConfig('STARTER_HERO_BUTTON_1_TEXT', null, CONFIG) &&
                 <li>
-                  <a
-                    href={siteConfig('STARTER_HERO_BUTTON_1_URL', null, CONFIG)}
+                  <a onClick={handleSearch}
+                  href='javascript:void(0)'
                     className="inline-flex items-center justify-center rounded-md bg-white px-7 py-[14px] text-center text-base font-medium text-dark shadow-1 transition duration-300 ease-in-out hover:bg-gray-2 hover:text-body-color"
                   >
-                     {siteConfig('STARTER_HERO_BUTTON_1_TEXT', null, CONFIG)}
+                     {/* href={siteConfig('STARTER_HERO_BUTTON_1_URL', null, CONFIG)} */}
+                     {/* {siteConfig('STARTER_HERO_BUTTON_1_TEXT', null, CONFIG)} */}
+                     登录
                   </a>
                 </li>
                 }
@@ -91,6 +109,7 @@ export const Hero = () => {
         </div>
       </div>
     </div>
+    <AlgoliaSearchModal cRef={searchModal} {...props}/>
     {/* <!-- ====== Hero Section End --> */}
     </>
 }
