@@ -13,14 +13,16 @@ const CONFIG = {
   STARTER_HERO_TITLE_1: 'Tech-Art', // 英雄区文字
   STARTER_HERO_TITLE_2: 'Open a new world with code.', // 英雄区文字
   // 英雄区两个按钮，如果TEXT留空则隐藏按钮
-  STARTER_HERO_BUTTON_1_TEXT: 'About us', // 英雄区按钮
+  STARTER_HERO_BUTTON_1_TEXT: '会员登录', // 英雄区按钮
   STARTER_HERO_BUTTON_1_URL:
     '/about', // 英雄区按钮
   STARTER_HERO_BUTTON_2_TEXT: '', // 英雄区按钮
   STARTER_HERO_BUTTON_2_URL: '', // 英雄区按钮
   STARTER_HERO_BUTTON_2_ICON: '', // 英雄区按钮2的图标，不需要则留空
 
-  STARTER_HERO_PREVIEW_IMAGE: 'https://cdn.xyehr.cn/images/banner.jpg', // 产品预览图 ，默认读取public目录下图片
+  // STARTER_HERO_PREVIEW_IMAGE: 'https://cdn.xyehr.cn/images/banner.jpg', // 产品预览图 ，默认读取public目录下图片
+  STARTER_HERO_PREVIEW_IMAGE: null, // 产品预览图 ，默认读取public目录下图片
+
 
   // 顶部右侧导航暗流
   STARTER_NAV_BUTTON_1_TEXT: 'About',
@@ -30,7 +32,7 @@ const CONFIG = {
   STARTER_NAV_BUTTON_2_URL: 'https://github.com/TechArt-Studio',
 
   // 特性区块
-  STARTER_FEATURE_ENABLE: true, // 特性区块开关
+  STARTER_FEATURE_ENABLE: true&false, // 特性区块开关
   STARTER_FEATURE_TITLE: 'Features', // 特性
   STARTER_FEATURE_TEXT_1: 'Features of Tech-Art Studio Apps', // 特性
   STARTER_FEATURE_TEXT_2:
@@ -58,7 +60,7 @@ const CONFIG = {
   STARTER_FEATURE_4_BUTTON_URL: '', // 特性4
 
   // 首页ABOUT区块
-  STARTER_ABOUT_ENABLE: true, // ABOUT区块开关
+  STARTER_ABOUT_ENABLE: true&false, // ABOUT区块开关
   STARTER_ABOUT_TITLE: 'What is Tech-Art?',
   STARTER_ABOUT_TEXT:
     'Tech-Art is a studio founded in China whose main mission is to help protect your privacy.',
@@ -174,7 +176,7 @@ const CONFIG = {
   ],
 
   //   FAQ 常见问题模块
-  STARTER_FAQ_ENABLE: true, // 常见问题模块开关
+  STARTER_FAQ_ENABLE: true&false, // 常见问题模块开关
   STARTER_FAQ_TITLE: 'FAQ',
   STARTER_FAQ_TEXT_1: 'Have any questions? See here.',
   STARTER_FAQ_TEXT_2: 'We have collected common user questions.',
@@ -196,7 +198,7 @@ const CONFIG = {
     'No, we use end-to-end and obfuscated encryption when you request our website/app.',
 
   // 团队成员区块
-  STARTER_TEAM_ENABLE: true, // 团队成员区块开关
+  STARTER_TEAM_ENABLE: true&false, // 团队成员区块开关
   STARTER_TEAM_TITLE: 'Our Team',
   STARTER_TEAM_TEXT_1: 'Our Developer Team',
   STARTER_TEAM_TEXT_2:
@@ -218,7 +220,7 @@ const CONFIG = {
   ],
 
   // 博客文章区块
-  STARTER_BLOG_ENABLE: true, // 首页博文区块开关
+  STARTER_BLOG_ENABLE: true&false, // 首页博文区块开关
   STARTER_BLOG_TITLE: 'Our Blog',
   STARTER_BLOG_COUNT: 3, // 首页博文区块默认展示前3篇文章
   STARTER_BLOG_TEXT_1: 'Press and Media',
@@ -226,7 +228,7 @@ const CONFIG = {
     'Here we will release the latest news about Tech-Art Studio, including new trends, new future plans, and new features.',
 
   // 联系模块
-  STARTER_CONTACT_ENABLE: true, // 联系模块开关
+  STARTER_CONTACT_ENABLE: true&false, // 联系模块开关
   STARTER_CONTACT_TITLE: 'Contact us',
   STARTER_CONTACT_TEXT: 'Tell us about your problem',
   STARTER_CONTACT_LOCATION_TITLE: 'Our Location',
