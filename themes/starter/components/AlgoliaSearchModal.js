@@ -250,7 +250,7 @@ export default function AlgoliaSearchModal({ cRef }) {
           isModalOpen ? 'opacity-100' : 'invisible opacity-0 translate-y-10'
         } flex flex-col justify-between w-full min-h-[10rem] h-full md:h-fit max-w-xl light:bg-hexo-black-gray light:border-gray-800 bg-white light:bg- p-5 rounded-lg z-50 shadow border hover:border-blue-600 duration-300 transition-all `}>
         <div className='flex justify-between items-center'>
-          <div className='text-2xl text-blue-600 light:text-yellow-600 font-bold'>
+          <div className='text-2xl text-black light:text-yellow-600 font-bold'>
             会员登录
           </div>
           <div>
@@ -286,7 +286,7 @@ export default function AlgoliaSearchModal({ cRef }) {
                               >
                             下一步
                               </a> */}
-            <button onClick={onJumpSearchResult} class="flex items-center w-24 justify-center rounded-md bg-blue-600 ml-5 px-6 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 relative top-4">下一步</button>
+            <button onClick={onJumpSearchResult} class="flex items-center w-24 justify-center rounded-md bg-black ml-5 px-6 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-dark-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 relative top-4">下一步</button>
 
           </div>
         </div>
