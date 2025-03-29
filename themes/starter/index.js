@@ -30,10 +30,12 @@ import { Team } from './components/Team'
 import { Testimonials } from './components/Testimonials'
 import CONFIG from './config'
 import { Style } from './style'
+import ShareBar from '@/components/ShareBar'
 // import { MadeWithButton } from './components/MadeWithButton'
 import BLOG from '@/blog.config'
 import { loadWowJS } from '@/lib/plugins/wow'
 import Link from 'next/link'
+import { ArticleLock } from './components/ArticleLock'
 import { Banner } from './components/Banner'
 import { SignInForm } from './components/SignInForm'
 import { SignUpForm } from './components/SignUpForm'
@@ -117,7 +119,8 @@ const LayoutIndex = props => {
  * @returns
  */
 const LayoutSlug = props => {
-  const { post } = props
+  // const { post } = props
+  const { post, lock, validPassword } = props
 
   // 如果 是 /article/[slug] 的文章路径则視情況进行重定向到另一个域名
   const router = useRouter()
@@ -145,7 +148,16 @@ const LayoutSlug = props => {
         <div className='flex flex-wrap justify-center -mx-4'>
           <div id='container-inner' className='w-full p-4'>
             <div id='article-wrapper' className='mx-auto'>
-              <NotionPage {...props} />
+              {/* <NotionPage {...props} /> */}
+              {lock && <ArticleLock validPassword={validPassword} />}
+
+            {!lock && post && (
+              <div id='article-wrapper' className='mx-auto'>
+                <NotionPage {...props} />
+                <Comment frontMatter={post} />
+                <ShareBar post={post} />
+              </div>
+            )}
             </div>
           </div>
         </div>
